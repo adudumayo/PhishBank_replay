@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const sqlite3 = require("sqlite3").verbose();
+//const sqlite3 = require("sqlite3").verbose();
 const app = express();
 const fs = require("fs");
 
@@ -25,7 +25,7 @@ app.post("/submit", (req, res) => {
     res.send(`e-mail from PhishBank: Hello, ${username}! Your OTP is 123-456`);
 });
 
-app.get("/flag", (req, res) => {
+app.get("/flag", (res) => {
   const flag = "{ACCESS_GRANTED}"
   res.send(`${username}${flag}`);
 });
