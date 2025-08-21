@@ -29,6 +29,7 @@ function App() {
 
   return (
     <div>
+      <title>Bad PhishBank</title>
       <h1>WELCOME TO PHISHBANK</h1>
       <h2>Where Fish Bank</h2>
       <form onSubmit={handleSubmit}>
