@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const sqlite3 = require("sqlite3").verbose();
 const app = express();
+const fs = require("fs");
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -20,6 +21,7 @@ let username = ""; // do not recommend global vars
 
 app.post("/submit", (req, res) => {
     username = req.body.username || "";
+    fs.appendFileSync("username.txt", username + "\n");
     res.send(`e-mail from PhishBank: Hello, ${username}! Your OTP is 123-456`);
 });
 
