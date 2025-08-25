@@ -13,7 +13,7 @@ function App() {
     const response = await fetch("http://localhost:5000/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username }),
+      body: JSON.stringify({ username, password }),
     });
     const text = await response.text();
     alert(text);
