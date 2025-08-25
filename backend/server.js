@@ -25,7 +25,7 @@ app.post("/submit", (req, res) => {
     res.send(`e-mail from PhishBank: Hello, ${username}! Your OTP is 123-456`);
 });
 
-app.get("/flag", (res) => {
+app.get("/flag", (req, res) => {
   const flag = "{ACCESS_GRANTED}"
   res.send(`${username}${flag}`);
 });
